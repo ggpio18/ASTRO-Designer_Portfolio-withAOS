@@ -1,0 +1,38 @@
+---
+import { navItems } from './utils/navigation';
+import MobileMenu from './Navigation/MobileMenu.astro';
+---
+
+<nav class="fixed w-full bg-primary/90 backdrop-blur-sm z-40 py-4">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-light">Portfolio</a>
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-white hover:text-light transition-colors duration-300"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menuButton"
+        class="md:hidden text-white hover:text-light transition-colors duration-300"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<MobileMenu />

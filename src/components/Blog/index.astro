@@ -1,0 +1,49 @@
+---
+import BlogCard from './BlogCard.astro';
+
+const posts = [
+  {
+    title: 'The Future of UI Design',
+    excerpt: 'Exploring upcoming trends in user interface design and what they mean for digital products.',
+    date: 'April 15, 2024',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3',
+    category: 'Design Trends'
+  },
+  {
+    title: 'Creating Accessible Interfaces',
+    excerpt: 'Best practices for designing inclusive digital experiences that work for everyone.',
+    date: 'April 10, 2024',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3',
+    category: 'Accessibility'
+  },
+  {
+    title: 'Design Systems at Scale',
+    excerpt: 'How to build and maintain design systems for large organizations.',
+    date: 'April 5, 2024',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3',
+    category: 'Design Systems'
+  }
+];
+---
+
+<section class="py-20 bg-secondary">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">
+        Latest Articles
+      </h2>
+      <a
+        href="#"
+        class="bg-light text-primary px-6 py-2 rounded-full hover:bg-opacity-90 transition-all duration-300"
+        data-aos="fade-up"
+      >
+        View All
+      </a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <BlogCard {...post} />
+      ))}
+    </div>
+  </div>
+</section>

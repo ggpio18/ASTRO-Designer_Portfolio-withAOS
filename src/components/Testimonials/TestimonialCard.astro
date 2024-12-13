@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  company: string;
+  image: string;
+  testimonial: string;
+}
+
+const { name, role, company, image, testimonial } = Astro.props;
+---
+
+<div class="bg-secondary p-6 rounded-lg shadow-lg" data-aos="fade-up">
+  <div class="flex items-center mb-4">
+    <img
+      src={image}
+      alt={name}
+      class="w-12 h-12 rounded-full object-cover mr-4"
+    />
+    <div>
+      <h4 class="font-bold text-light">{name}</h4>
+      <p class="text-sm text-gray-400">{role} at {company}</p>
+    </div>
+  </div>
+  <p class="text-gray-300 italic">"{testimonial}"</p>
+</div>

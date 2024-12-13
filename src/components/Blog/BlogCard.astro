@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  category: string;
+}
+
+const { title, excerpt, date, image, category } = Astro.props;
+---
+
+<article class="bg-secondary rounded-lg overflow-hidden shadow-lg" data-aos="fade-up">
+  <div class="relative">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-48 object-cover"
+    />
+    <span class="absolute top-4 right-4 bg-light text-primary px-3 py-1 rounded-full text-sm">
+      {category}
+    </span>
+  </div>
+  <div class="p-6">
+    <time class="text-sm text-gray-400">{date}</time>
+    <h3 class="text-xl font-bold mt-2 mb-3 text-light">{title}</h3>
+    <p class="text-gray-300 mb-4">{excerpt}</p>
+    <a
+      href="#"
+      class="text-light hover:text-white transition-colors duration-300 inline-flex items-center"
+    >
+      Read More
+      <svg
+        class="w-4 h-4 ml-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        ></path>
+      </svg>
+    </a>
+  </div>
+</article>

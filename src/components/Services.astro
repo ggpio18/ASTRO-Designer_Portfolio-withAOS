@@ -1,0 +1,45 @@
+---
+const services = [
+  {
+    title: 'UI Design',
+    description: 'Creating beautiful and intuitive user interfaces that engage and delight users.',
+    icon: '🎨'
+  },
+  {
+    title: 'UX Design',
+    description: 'Designing seamless user experiences that solve real problems effectively.',
+    icon: '🔍'
+  },
+  {
+    title: 'Prototyping',
+    description: 'Building interactive prototypes to test and validate design solutions.',
+    icon: '⚡'
+  },
+  {
+    title: 'Design Systems',
+    description: 'Developing scalable design systems for consistent brand experiences.',
+    icon: '📐'
+  }
+];
+---
+
+<section id="services" class="py-20 bg-primary">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" data-aos="fade-up">
+      My Services
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service, index) => (
+        <div
+          class="bg-secondary p-6 rounded-lg"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-bold mb-3 text-light">{service.title}</h3>
+          <p class="text-gray-400">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

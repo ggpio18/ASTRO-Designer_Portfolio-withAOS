@@ -1,0 +1,64 @@
+---
+const projects = [
+  {
+    title: 'Digital Art Gallery',
+    description: 'An immersive virtual gallery showcasing digital artwork.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3',
+    category: 'Art Direction'
+  },
+  {
+    title: 'Creative Portfolio',
+    description: 'A dynamic portfolio for a digital artist.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3',
+    category: 'Web Design'
+  },
+  {
+    title: 'NFT Marketplace',
+    description: 'A modern platform for digital art collectors.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3',
+    category: 'UI/UX'
+  },
+  {
+    title: 'Artist Community',
+    description: 'Social platform connecting digital artists worldwide.',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3',
+    category: 'Community'
+  }
+];
+---
+
+<section id="projects" class="py-20 bg-secondary relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-dots bg-[length:20px_20px] opacity-5"></div>
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" data-aos="fade-up">
+      Featured <span class="gradient-text">Projects</span>
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {projects.map((project, index) => (
+        <div
+          class="group relative overflow-hidden rounded-lg shadow-lg card-hover"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <img
+            src={project.image}
+            alt={project.title}
+            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-accent text-sm mb-2">{project.category}</span>
+            <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+            <p class="text-sm text-muted">{project.description}</p>
+            <a href="#" class="mt-4 text-accent hover:text-highlight transition-colors duration-300 inline-flex items-center">
+              View Project
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

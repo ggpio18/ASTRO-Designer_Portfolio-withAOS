@@ -1,0 +1,39 @@
+---
+import { navItems } from '../utils/navigation';
+---
+
+<div id="mobileMenu" class="fixed inset-0 bg-primary/95 transform translate-x-full transition-transform duration-300 z-50 md:hidden">
+  <div class="flex flex-col h-full p-8">
+    <button id="closeMenu" class="self-end text-3xl mb-8">×</button>
+    <ul class="flex flex-col space-y-6">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="text-xl text-white hover:text-light transition-colors duration-300 block"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<script>
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuButton = document.getElementById('menuButton');
+  const closeButton = document.getElementById('closeMenu');
+  const mobileLinks = document.querySelectorAll('#mobileMenu a');
+
+  const toggleMenu = () => {
+    mobileMenu.classList.toggle('translate-x-full');
+    document.body.classList.toggle('overflow-hidden');
+  };
+
+  menuButton?.addEventListener('click', toggleMenu);
+  closeButton?.addEventListener('click', toggleMenu);
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>

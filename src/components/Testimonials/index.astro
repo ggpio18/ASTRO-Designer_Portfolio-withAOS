@@ -1,0 +1,40 @@
+---
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = [
+  {
+    name: 'Sarah Johnson',
+    role: 'Product Manager',
+    company: 'TechCorp',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3',
+    testimonial: 'Working with John was an absolute pleasure. His attention to detail and creative solutions transformed our product\'s user experience.'
+  },
+  {
+    name: 'Michael Chen',
+    role: 'CEO',
+    company: 'StartupX',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3',
+    testimonial: 'John\'s expertise in UI/UX design helped us increase our user engagement by 200%. Highly recommended!'
+  },
+  {
+    name: 'Emily Rodriguez',
+    role: 'Marketing Director',
+    company: 'CreativeHub',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3',
+    testimonial: 'The redesign of our platform exceeded all expectations. John has a unique ability to understand and implement complex requirements.'
+  }
+];
+---
+
+<section class="py-20 bg-primary">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" data-aos="fade-up">
+      Client Testimonials
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial) => (
+        <TestimonialCard {...testimonial} />
+      ))}
+    </div>
+  </div>
+</section>
